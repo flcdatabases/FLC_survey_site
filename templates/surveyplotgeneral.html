@@ -176,13 +176,13 @@
                 <div class="chart-container">
                     <canvas id="role" style="width:100%;max-width:500px"></canvas>
                 </div>
+            </div>
+            <!--Row 2-->
+            <div style="display: flex; justify-content: center;">
                 <!--General Info: Gender-->
                 <div class="chart-container">
                     <canvas id="gender" style="width:100%;max-width:500px"></canvas>
                 </div>
-            </div>
-            <!--Row 2-->
-            <div style="display: flex; justify-content: center;">
                 <!--General Info: Pronouns-->
                 <div class="chart-container">
                     <canvas id="pronouns" style="width:100%;max-width:500px"></canvas>
@@ -247,23 +247,33 @@
                              }
                          }});
                      }
-                     // Arguments: The chart id (string), x axis variables (list), y axis variables (list), label (string)
-                     function makeDoughnutChart(id_string, x_vars, y_vars, label){
-                         new Chart(id_string, {
-                         type: "doughnut",
-                         data: {
-                             labels: x_vars,
-                             datasets: [{
-                                 label: label,
-                                 backgroundColor: barColors,
-                                 data: y_vars
+                    // Arguments: The chart id (string), x axis variables (list), y axis variables (list), label (string)
+                    function makeDoughnutChart(id_string, x_vars, y_vars, label){
+                        new Chart(id_string, {
+                        type: "doughnut",
+                        data: {
+                            labels: x_vars,
+                            datasets: [{
+                                label: label,
+                                backgroundColor: barColors,
+                                data: y_vars
          
-                             }]
-                         },
-                         options: {
-                             responsive: true,
-                         }
-                         });
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            legend: {
+                                display: false // Removing this line shows the datalabels again
+                            },
+                            title: {
+                                display: true,
+                                text: label,
+                                font: {
+                                    size: 16,
+                                    style: 'normal'
+                                }
+                            },
+                        }});
                      }
          
                      // General Info: Age

@@ -271,8 +271,18 @@
                         },
                         options: {
                             responsive: true,
-                        }
-                        });
+                            legend: {
+                                display: false // Removing this line shows the datalabels again
+                            },
+                            title: {
+                                display: true,
+                                text: label,
+                                font: {
+                                    size: 16,
+                                    style: 'normal'
+                                }
+                            },
+                        }});
                     }
 
                     // Demographics: Race
