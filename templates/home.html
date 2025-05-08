@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" 
+        content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Frontline Catalysts Survey</title>
+    <link rel="icon" type="image" href="{{ url_for('static', filename='FC-logo-icon.webp')}}">
+
+    <style>
+        /* Styling the Body element 
+        i.e. Color, Font, Alignment */
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #fed000;
+            font-family: Verdana;
+            text-align: center;
+        }
+        
+        header{
+            background-color: #000000;
+            padding: 22px;
+            width: auto;
+            color: #ffffff;
+            box-sizing: border-box;
+            font-size: 30px;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        header img {
+            margin-right: 1px; /* Adjust the spacing as needed */
+        }
+
+        a:link, a:visited {
+            background-color: #000000;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        a:hover, a:active {
+        background-color: #000000;
+        }
+
+        .page-container {
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        .content-wrap {
+            padding-bottom: 5rem;
+        }
+
+        footer {
+            background-color: #000000;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            height: 5rem;
+            box-sizing: border-box;
+            color: #ffffff;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body> 
+    <div class="page-container">
+        <div class="content-wrap">
+            <header style="display: flex; justify-content: center;">
+                <a href="{{ url_for('home') }}">
+                    <img src="{{ url_for('static', filename='Full-FC-logo-for-dark-bckgnd.png')}}" alt="Frontline Catalysts Logo" width="250" height="auto">
+                </a>
+                <a href="{{ url_for('survey_demo') }}">Demographics</a>
+                <a href="{{ url_for('survey_general')}}">General Info</a>
+                <a href="{{ url_for('survey')}}">Community Insight</a>
+                <a href="{{ url_for('login') }}">Admin Login</a>
+            </header>                        
+        </div>
+        <footer>
+            <p>© 2025 SFSU ENGR 340 Team. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

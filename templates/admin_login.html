@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" 
+        content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Admin Login Page</title>
+    <link rel="icon" type="image" href="{{ url_for('static', filename='FC-logo-icon.webp')}}">
+
+    <style>
+        /* Styling the Body element 
+        i.e. Color, Font, Alignment */
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #fed000;
+            font-family: Verdana;
+            text-align: center;
+        }
+        
+        header{
+            background-color: #000000;
+            padding: 22px;
+            width: auto;
+            color: #ffffff;
+            box-sizing: border-box;
+            font-size: 30px;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        header img {
+            margin-right: 1px; /* Adjust the spacing as needed */
+        }
+
+        a:link, a:visited {
+            background-color: #000000;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        a:hover, a:active {
+        background-color: #000000;
+        }
+
+        .page-container {
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        .content-wrap {
+            padding-bottom: 5rem;
+        }
+
+        footer {
+            background-color: #000000;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            height: 5rem;
+            box-sizing: border-box;
+            color: #ffffff;
+            position: absolute;
+            bottom: 0;
+        }
+        
+        /* Styling the Form (Color, Padding, Shadow) */
+        form {
+            background-color: #fff;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Styling form-control Class */
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        /* Styling form-control Label */
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Styling form-control input, 
+        select, textarea */
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+
+        /* Styling form-control Radio 
+        button and Checkbox */
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+
+        /* Styling Button */
+        button {
+            background-color: #05c46b;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="page-container">
+        <div class="content-wrap">            
+            <header>
+                <a href="{{ url_for('home') }}">
+                    <img src="{{ url_for('static', filename='Full-FC-logo-for-dark-bckgnd.png')}}" alt="Frontline Catalysts Logo" width="250" height="auto">
+                </a>
+                <a href="{{ url_for('survey_demo') }}">Demographics</a>
+                <a href="{{ url_for('survey_general')}}">General Info</a>
+                <a href="{{ url_for('survey')}}">Community Insight</a>
+                <a href="{{ url_for('login') }}">Admin Login</a>
+            </header>
+
+            <h1>Administrative Login</h1>            
+            
+            <form action="/login" method="POST">
+                <div class="form-control">
+                    <label for="login">
+                        Email:
+                    </label>
+        
+                    <input type="text" name="login"
+                            placeholder="Enter your email" required/>
+                </div>
+                
+                <div class="form-control">
+                    <label for="password">
+                        Password:
+                    </label>
+        
+                    <input type="text" name="password"
+                            placeholder="Enter your password" required/>
+                </div>
+        
+                <!-- Multi-line Text Input Control -->
+                <button type="submit" value="submit">
+                    Submit
+                </button>
+            </form>
+            <footer>
+            <p>© 2025 SFSU ENGR 340 Team. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,717 @@
+<!-- Survey for Self Assessments - Measurements of Program Objectives -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" 
+          content="IE=edge">
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1.0">
+    <title>
+        Frontline Catalysts Self Assessment - Measurements of Program Objectives Survey
+    </title>
+
+    <style>
+        /* Styling the Body element 
+        i.e. Color, Font, Alignment */
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #fed000;
+            font-family: Verdana;
+            text-align: center;
+        }
+        
+        header{
+            background-color: #000000;
+            padding: 22px;
+            width: auto;
+            color: #ffffff;
+            box-sizing: border-box;
+            font-size: 30px;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        header img {
+            margin-right: 1px; /* Adjust the spacing as needed */
+        }
+
+        header span{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        a:link, a:visited {
+            background-color: #000000;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        a:hover, a:active {
+        background-color: #000000;
+        }
+
+        /* Styling the Form (Color, Padding, Shadow) */
+        form {
+            background-color: #fff;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Styling form-control Class */
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        /* Styling form-control Label */
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Styling form-control input, 
+        select, textarea */
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+
+        /* Styling form-control Radio 
+        button and Checkbox */
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+
+        /* Styling Button */
+        button {
+            background-color: #05c46b;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #000000;
+            text-align: center;
+            padding: 20px;
+            width: auto;
+            color: #ffffff;
+            box-sizing: border-box;
+            position: relative;
+            bottom: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='Full-FC-logo-for-dark-bckgnd.png')}}" alt="Frontline Catalysts Logo" width="250" height="auto">
+        </a>
+        <a href="{{ url_for('survey_demo') }}">Demographics</a>
+        <a href="{{ url_for('survey_general')}}">General Info</a>
+        <a href="{{ url_for('self_assess')}}">Self Assessment</a>
+        <a href="{{ url_for('login') }}">Login</a>
+    </header>
+    <h1>Frontline Catalysts Self Assessment - Measurements of Program Objectives Survey</h1>
+
+    <!-- Create Form -->
+    <form name="assessment" action="/self-assessment" onsubmit="validateForm()" method="POST" required>
+
+        <!-- 1st Question: Type of Question Asked About -->
+
+        <div class="form-control">
+            <label> Please select which evaluation you are filling out:
+            </label>
+            <label for="inp-1">
+                <input type="checkbox" id="inp-1" 
+                       name="inp"> Pre-evaluation program survey
+                  </input>
+            </label>
+            <label for="inp-2">
+                <input type="checkbox" id="inp-2" 
+                       name="inp"> Mid-program evaluation survey
+                  </input>
+            </label>
+            <label for="inp-3">
+                <input type="checkbox" id="inp-3" 
+                       name="inp"> Post-program evaluation survey
+                  </input>
+            </label>
+        </div>
+
+        <div class="form-control">
+            <label> Please Read the Following Statements and rate your understanding and/or agreement accordingly:
+            </label>
+            <label>
+                I understand concepts and principles of Environmental Justice and how to define it.
+            </label>
+            <label for="inp-1">
+                <input type="radio" id="inp-1" 
+                       name="inp"> Strongly Agree
+                  </input>
+            </label>
+            <label for="inp-2">
+                <input type="radio" id="inp-2" 
+                       name="inp"> Agree
+                  </input>
+            </label>
+            <label for="inp-3">
+                <input type="radio" id="inp-3" 
+                       name="inp"> Neutral
+                  </input>
+            </label>
+            <label for="inp-4">
+                <input type="radio" id="inp-4" 
+                       name="inp"> Disagree
+                  </input>
+            </label>
+            <label for="inp-5">
+                <input type="radio" id="inp-5" 
+                       name="inp"> Strongly Disagree
+                  </input>
+            </label>
+        </div>
+
+        <div class="form-control">
+            <label>
+                Environmental justice is an important topic that I care about.
+            </label>
+            <label for="inp-1">
+                <input type="radio" id="inp-1" 
+                       name="inp"> Strongly Agree
+                  </input>
+            </label>
+            <label for="inp-2">
+                <input type="radio" id="inp-2" 
+                       name="inp"> Agree
+                  </input>
+            </label>
+            <label for="inp-3">
+                <input type="radio" id="inp-3" 
+                       name="inp"> Neutral
+                  </input>
+            </label>
+            <label for="inp-4">
+                <input type="radio" id="inp-4" 
+                       name="inp"> Disagree
+                  </input>
+            </label>
+            <label for="inp-5">
+                <input type="radio" id="inp-5" 
+                       name="inp"> Strongly Disagree
+                  </input>
+            </label>
+        </div>
+
+        <div class="form-control">
+            <label>
+                Climate Justice is an important topic to learn about in school.
+            </label>
+            <label for="inp-1">
+                <input type="radio" id="inp-1" 
+                       name="inp"> Strongly Agree
+                  </input>
+            </label>
+            <label for="inp-2">
+                <input type="radio" id="inp-2" 
+                       name="inp"> Agree
+                  </input>
+            </label>
+            <label for="inp-3">
+                <input type="radio" id="inp-3" 
+                       name="inp"> Neutral
+                  </input>
+            </label>
+            <label for="inp-4">
+                <input type="radio" id="inp-4" 
+                       name="inp"> Disagree
+                  </input>
+            </label>
+            <label for="inp-5">
+                <input type="radio" id="inp-5" 
+                       name="inp"> Strongly Disagree
+                  </input>
+            </label>
+        </div>
+
+        <div class="form-control">
+            <label>
+                I feel confident discussing environmental and climate issues publicly.
+            </label>
+            <label for="inp-1">
+                <input type="radio" id="inp-1" 
+                       name="inp"> Strongly Agree
+                  </input>
+            </label>
+            <label for="inp-2">
+                <input type="radio" id="inp-2" 
+                       name="inp"> Agree
+                  </input>
+            </label>
+            <label for="inp-3">
+                <input type="radio" id="inp-3" 
+                       name="inp"> Neutral
+                  </input>
+            </label>
+            <label for="inp-4">
+                <input type="radio" id="inp-4" 
+                       name="inp"> Disagree
+                  </input>
+            </label>
+            <label for="inp-5">
+                <input type="radio" id="inp-5" 
+                       name="inp"> Strongly Disagree
+                  </input>
+            </label>
+        </div>
+
+        <div class="form-control">
+            <label>
+                I care about my environment and feel connected to my community.
+            </label>
+            <label for="inp-1">
+                <input type="radio" id="inp-1" 
+                       name="inp"> Strongly Agree
+                  </input>
+            </label>
+            <label for="inp-2">
+                <input type="radio" id="inp-2" 
+                       name="inp"> Agree
+                  </input>
+            </label>
+            <label for="inp-3">
+                <input type="radio" id="inp-3" 
+                       name="inp"> Neutral
+                  </input>
+            </label>
+            <label for="inp-4">
+                <input type="radio" id="inp-4" 
+                       name="inp"> Disagree
+                  </input>
+            </label>
+            <label for="inp-5">
+                <input type="radio" id="inp-5" 
+                       name="inp"> Strongly Disagree
+                  </input>
+            </label>
+        </div>
+
+        <div class="form-control">
+            <label>
+                I am interested in learning more about how we can improve our communities.            </label>
+            <label for="inp-1">
+                <input type="radio" id="inp-1" 
+                       name="inp"> Strongly Agree
+                  </input>
+            </label>
+            <label for="inp-2">
+                <input type="radio" id="inp-2" 
+                       name="inp"> Agree
+                  </input>
+            </label>
+            <label for="inp-3">
+                <input type="radio" id="inp-3" 
+                       name="inp"> Neutral
+                  </input>
+            </label>
+            <label for="inp-4">
+                <input type="radio" id="inp-4" 
+                       name="inp"> Disagree
+                  </input>
+            </label>
+            <label for="inp-5">
+                <input type="radio" id="inp-5" 
+                       name="inp"> Strongly Disagree
+                  </input>
+            </label>
+        </div>
+
+        <div class="form-control">
+            <label>
+                I have experience testing the air, soil, energy and/or water quality in my community.
+            </label>
+            <label for="inp-1">
+                <input type="radio" id="inp-1" 
+                       name="inp"> Strongly Agree
+                  </input>
+            </label>
+            <label for="inp-2">
+                <input type="radio" id="inp-2" 
+                       name="inp"> Agree
+                  </input>
+            </label>
+            <label for="inp-3">
+                <input type="radio" id="inp-3" 
+                       name="inp"> Neutral
+                  </input>
+            </label>
+            <label for="inp-4">
+                <input type="radio" id="inp-4" 
+                       name="inp"> Disagree
+                  </input>
+            </label>
+            <label for="inp-5">
+                <input type="radio" id="inp-5" 
+                       name="inp"> Strongly Disagree
+                  </input>
+            </label>
+        </div>
+
+        <div class="form-control">
+            <label>
+                I have a personal story and/or experience that explains my connection to climate justice 
+                and I feel confident sharing it with my peers and other community members.            
+            </label>
+            <label for="inp-1">
+                <input type="radio" id="inp-1" 
+                       name="inp"> Strongly Agree
+                  </input>
+            </label>
+            <label for="inp-2">
+                <input type="radio" id="inp-2" 
+                       name="inp"> Agree
+                  </input>
+            </label>
+            <label for="inp-3">
+                <input type="radio" id="inp-3" 
+                       name="inp"> Neutral
+                  </input>
+            </label>
+            <label for="inp-4">
+                <input type="radio" id="inp-4" 
+                       name="inp"> Disagree
+                  </input>
+            </label>
+            <label for="inp-5">
+                <input type="radio" id="inp-5" 
+                       name="inp"> Strongly Disagree
+                  </input>
+            </label>
+        </div>
+
+        <div class="form-control">
+            <label>
+                I know what I can do to improve my home and school’s resilience to climate extremes.
+            </label>
+            <label for="inp-1">
+                <input type="radio" id="inp-1" 
+                       name="inp"> Strongly Agree
+                  </input>
+            </label>
+            <label for="inp-2">
+                <input type="radio" id="inp-2" 
+                       name="inp"> Agree
+                  </input>
+            </label>
+            <label for="inp-3">
+                <input type="radio" id="inp-3" 
+                       name="inp"> Neutral
+                  </input>
+            </label>
+            <label for="inp-4">
+                <input type="radio" id="inp-4" 
+                       name="inp"> Disagree
+                  </input>
+            </label>
+            <label for="inp-5">
+                <input type="radio" id="inp-5" 
+                       name="inp"> Strongly Disagree
+                  </input>
+            </label>
+        </div>
+
+        <div class="form-control">
+            <label>
+                I feel prepared to address environmental injustices in my community.
+            </label>
+            <label for="inp-1">
+                <input type="radio" id="inp-1" 
+                       name="inp"> Strongly Agree
+                  </input>
+            </label>
+            <label for="inp-2">
+                <input type="radio" id="inp-2" 
+                       name="inp"> Agree
+                  </input>
+            </label>
+            <label for="inp-3">
+                <input type="radio" id="inp-3" 
+                       name="inp"> Neutral
+                  </input>
+            </label>
+            <label for="inp-4">
+                <input type="radio" id="inp-4" 
+                       name="inp"> Disagree
+                  </input>
+            </label>
+            <label for="inp-5">
+                <input type="radio" id="inp-5" 
+                       name="inp"> Strongly Disagree
+                  </input>
+            </label>
+        </div>
+
+        <div class="form-control">
+            <label>
+                I understand how Indigenous values and practices contribute to 
+                building climate resiliency in my community.            
+            </label>
+            <label for="inp-1">
+                <input type="radio" id="inp-1" 
+                       name="inp"> Strongly Agree
+                  </input>
+            </label>
+            <label for="inp-2">
+                <input type="radio" id="inp-2" 
+                       name="inp"> Agree
+                  </input>
+            </label>
+            <label for="inp-3">
+                <input type="radio" id="inp-3" 
+                       name="inp"> Neutral
+                  </input>
+            </label>
+            <label for="inp-4">
+                <input type="radio" id="inp-4" 
+                       name="inp"> Disagree
+                  </input>
+            </label>
+            <label for="inp-5">
+                <input type="radio" id="inp-5" 
+                       name="inp"> Strongly Disagree
+                  </input>
+            </label>
+        </div>
+
+        <div class="form-control">
+            <label>
+                I have experience working in groups with other students 
+                and my peers to develop projects, campaigns and initiatives around Climate Justice.
+            </label>
+            <label for="inp-1">
+                <input type="radio" id="inp-1" 
+                       name="inp"> Strongly Agree
+                  </input>
+            </label>
+            <label for="inp-2">
+                <input type="radio" id="inp-2" 
+                       name="inp"> Agree
+                  </input>
+            </label>
+            <label for="inp-3">
+                <input type="radio" id="inp-3" 
+                       name="inp"> Neutral
+                  </input>
+            </label>
+            <label for="inp-4">
+                <input type="radio" id="inp-4" 
+                       name="inp"> Disagree
+                  </input>
+            </label>
+            <label for="inp-5">
+                <input type="radio" id="inp-5" 
+                       name="inp"> Strongly Disagree
+                  </input>
+            </label>
+        </div>
+
+        <div class="form-control">
+            <label>
+                I understand the following terms: Climate Justice, Climate Resiliency, 
+                Ethnic Studies and Climate Action.
+            </label>
+            <label for="inp-1">
+                <input type="radio" id="inp-1" 
+                       name="inp"> Strongly Agree
+                  </input>
+            </label>
+            <label for="inp-2">
+                <input type="radio" id="inp-2" 
+                       name="inp"> Agree
+                  </input>
+            </label>
+            <label for="inp-3">
+                <input type="radio" id="inp-3" 
+                       name="inp"> Neutral
+                  </input>
+            </label>
+            <label for="inp-4">
+                <input type="radio" id="inp-4" 
+                       name="inp"> Disagree
+                  </input>
+            </label>
+            <label for="inp-5">
+                <input type="radio" id="inp-5" 
+                       name="inp"> Strongly Disagree
+                  </input>
+            </label>
+        </div>
+
+        <div class="form-control">
+            <label>
+                I have experience mentoring other students, facilitating workshops & lessons, 
+                and/or training others on how to.            
+            </label>
+            <label for="inp-1">
+                <input type="radio" id="inp-1" 
+                       name="inp"> Strongly Agree
+                  </input>
+            </label>
+            <label for="inp-2">
+                <input type="radio" id="inp-2" 
+                       name="inp"> Agree
+                  </input>
+            </label>
+            <label for="inp-3">
+                <input type="radio" id="inp-3" 
+                       name="inp"> Neutral
+                  </input>
+            </label>
+            <label for="inp-4">
+                <input type="radio" id="inp-4" 
+                       name="inp"> Disagree
+                  </input>
+            </label>
+            <label for="inp-5">
+                <input type="radio" id="inp-5" 
+                       name="inp"> Strongly Disagree
+                  </input>
+            </label>
+        </div>
+
+    <div class="form-control">
+            <label for="email" id="label-email">
+                Some Climate/Environmental topics I would be interested learning about are:
+            </label>
+
+            <!-- Input Type Text -->
+            <input type="text" id="name" 
+                   placeholder="Enter your interest in climate/environmental topics here." />
+        </div>
+
+    <div class="form-control">
+            <label for="email" id="label-email">
+                Some climate injustices I see around my community are:
+            </label>
+
+            <!-- Input Type Text -->
+            <input type="text" id="name" 
+                   placeholder="Enter some climate injustices you see here." />
+        </div>
+    
+    <div class="form-control">
+            <label for="email" id="label-email">
+                Anything else we should know?
+            </label>
+
+            <!-- Input Type Text -->
+            <input type="text" id="name" 
+                   placeholder="Enter anything else here." />
+        </div>
+
+        <div class="form-control">
+            <label for="comment">
+                Favorite Part of this Program is:
+            </label>
+
+            <textarea name="comment" id="comment" 
+                    placeholder="Enter your favorite part of the program here.">
+            </textarea>
+        </div>
+
+        <!-- Dropdown Menu -->
+
+        <form action="/action_page.php">
+            <label for="favorite">
+                Please select your Favorite lesson:
+            </label>
+            <select name="favorite" id="favorite">
+                <option value="first_lesson">Lesson 1</option>
+                <option value="second_lesson">Lesson 2</option>
+                <option value="third_lesson">Lesson 3</option>
+                <option value="fourth_lesson">Lesson 4</option>
+                <option value="fifth_lesson">Lesson 5</option>
+            </select>
+        
+            <br><br> <!-- Line Break between 2 questions -->
+        
+            <label for="least" style="margin-left: 20px;">
+                Please select your least favorite lesson:
+            </label>
+            <select name="least" id="least">
+                <option value="first_lesson">Lesson 1</option>
+                <option value="second_lesson">Lesson 2</option>
+                <option value="third_lesson">Lesson 3</option>
+                <option value="fourth_lesson">Lesson 4</option>
+                <option value="fifth_lesson">Lesson 5</option>
+            </select>
+
+        <br><br>
+    
+        <div class="form-control">
+            <label for="comment">
+                What kind of activities do you enjoy the most (Interactive, individual or team-building or any others)?
+            </label>
+
+            <textarea name="comment" id="comment" 
+                    placeholder="Enter your favorite activites here.">
+            </textarea>
+        </div>
+
+        <div class="form-control">
+            <label for="comment">
+                If I could include or change something to this class/program, it would be:
+            </label>
+
+            <textarea name="comment" id="comment" 
+                    placeholder="Enter what you would change here.">
+            </textarea>
+        </div>
+
+        <!-- Multi-line Text Input Control -->
+        <button type="submit" value="submit">
+            Submit
+        </button>
+    </form>
+
+    <footer>
+        <p>© 2025 SFSU ENGR 340 Team. All rights reserved.</p>
+    </footer>
+</body>
+
+<script>
+    function validateForm() {
+        var x = document.forms["assessment"]["firstname"].value;
+        if (x == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" 
+        content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Frontline Catalysts General Information and Participation survey</title>
+    <link rel="icon" type="image" href="{{ url_for('static', filename='FC-logo-icon.webp')}}">
+
+    <style>
+        /* Styling the Body element 
+        i.e. Color, Font, Alignment */
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #fed000;
+            font-family: Verdana;
+            text-align: center;
+        }
+        
+        header{
+            background-color: #000000;
+            padding: 22px;
+            width: auto;
+            color: #ffffff;
+            box-sizing: border-box;
+            font-size: 30px;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        header img {
+            margin-right: 1px; /* Adjust the spacing as needed */
+        }
+
+        header span{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        a:link, a:visited {
+            background-color: #000000;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        a:hover, a:active {
+        background-color: #000000;
+        }
+
+        .page-container {
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        .content-wrap {
+            padding-bottom: 5rem;
+        }
+
+        footer {
+            background-color: #000000;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            height: 5rem;
+            box-sizing: border-box;
+            color: #ffffff;
+            position: absolute;
+            bottom: 0;
+        }
+
+        /* Styling the Form (Color, Padding, Shadow) */
+        form {
+            background-color: #fff;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Styling form-control Class */
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        /* Styling form-control Label */
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Styling form-control input, 
+        select, textarea */
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+
+        /* Styling form-control Radio 
+        button and Checkbox */
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+
+        /* Styling Button */
+        button {
+            background-color: #fed000;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Create Form -->
+    <div class="page-container">
+        <div class="content-wrap">
+            <header>
+                <a href="{{ url_for('home') }}">
+                    <img src="{{ url_for('static', filename='Full-FC-logo-for-dark-bckgnd.png')}}" alt="Frontline Catalysts Logo" width="250" height="auto">
+                </a>
+                <a href="{{ url_for('survey_demo') }}">Demographics</a>
+                <a href="{{ url_for('survey_general')}}">General Info</a>
+                <a href="{{ url_for('survey')}}">Community Insight</a>
+                <a href="{{ url_for('login') }}">Admin Login</a>
+            </header>
+            
+            <h1>Frontline Catalysts General Information and Participation survey</h1>            
+            
+            <form name="general" action="/survey_general" method="POST">
+                <div class="form-control">
+                    <label for="firstname">
+                        First Name:
+                    </label>
+
+                    <input type="text" name="firstname" placeholder="Enter your first name" required>
+                </div>
+
+                <div class="form-control">
+                    <label for="lastname">
+                        Last Name:
+                    </label>
+
+                    <input type="text" name="lastname" placeholder="Enter your last name" required>
+                </div>
+                
+                <div class="form-control">
+                    <label for="DateOfBirth">
+                        Date of Birth:
+                    </label>
+
+                    <input type="date" name="DOB" placeholder="Enter your Date of Birth" required>
+                </div>
+
+                <div class="form-control">
+                    <label for="role">
+                        Which option best describes you?
+                    </label>
+
+                    <!-- Dropdown options -->
+                    <select name="role">
+                        <option value="student">Student</option>
+                        <option value="Teacher">Teacher</option>
+                        <option value="Parent">Parent</option>
+                        <option value="Policy maker">policy maker</option>
+                        <option value="FC Staff">FC Staff</option>
+                        <option value="Community member">community member</option>
+                        <option value="other">other</option>
+                    </select>
+                </div>
+
+                <div class="form-control">
+                    <label>
+                        Have you participated in a community event in the past?
+                    </label>
+
+                    <!-- Input Type Radio Button -->
+                    <select name="recommend">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                        <option value="Maybe">Maybe</option>
+                    </select>
+                </div>
+
+                <div class="form-control">
+                    <label>
+                        What's your preferred gender and identity
+                    </label>
+
+                    <!-- Input Type Radio Button -->
+                    <select name="gender">
+                        <option value="Prefer not to answer">Prefer not to answer</option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Transgender Female">Transgender Female</option>
+                        <option value="Transgender Male">Transgender Male</option>
+                        <option value="Non-binary or gender non-conforming">Non-binary or gender non-conforming</option>
+                    </select>
+                </div>
+
+                <div class="form-control">
+                    <label>
+                        What pronouns do you use?
+                    </label>
+
+                    <!-- Input Type Radio Button -->
+                    <select name="Pronouns">
+                        <option value="They/Them">they/them</option>         
+                        <option value="She/her">she/her</option>
+                        <option value="He/him">he/him</option>
+                        <option value="Other">other</option>
+                    </select>
+                </div>
+
+                <div class="form-control">
+                    <label>
+                        What is your phone number?
+
+                        <input type="tel" name="Phone_Number" placeholder="Phone Number" required>
+                    </label>
+
+                    <!-- Input Type number -->
+                    
+                </div>
+
+                <div class="form-control">
+
+                    <label>
+                        I am participating in the following Frontline Catalysts program 
+                    </label>
+                    
+                    <!-- Input Type checkboxes -->
+                    <div>
+                        <label for="UFSA-CJL">
+                            <input type="checkbox" name="UFSA-CJL" value="Yes"> UFSA - Climate Justice Leadership (Maha’s Class)</label>
+                        <label for="UFSA-LC">
+                            <input type="checkbox" name="UFSA-LC" value="Yes"> UFSA - Lunch Club</label>
+                        <label for="LA-LC">
+                            <input type="checkbox" name="LA-LC" value="Yes"> LA - Lunch Club
+                            </input>
+                        </label>
+                        <label for="Rudsdale-FV">
+                            <input type="checkbox" name="Rudsdale-FV" value="Yes"> Rudsdale - Frontline Voices
+                            </input>
+                        </label>
+                        <label for="LA-GSI">
+                            <input type="checkbox" name="LA-GSI" value="Yes"> LA - Garden Stewartship Internship
+                            </input>
+                        </label>
+                        <label for="LA-AC">
+                            <input type="checkbox" name="LA-AC" value="Yes"> LA - Afterschool Club
+                            </input>
+                        </label>
+                        <label for="CALI-SP(SP)">
+                            <input type="checkbox" name="CALI-SP(SP)" value="Yes"> CALI - Saturday Program (Student Participant)
+                            </input>
+                        </label>
+                        <label for="CALI-SP(SF)">
+                            <input type="checkbox" name="CALI-SP(SF)" value="Yes"> CALI - Saturday Program (Student Facilitator)
+                            </input>
+                        </label>
+                        <label for="CALI-DSC">
+                            <input type="checkbox" name="CALI-DSC" value="Yes"> CALI - Digital Storytelling Camp
+                            </input>
+                        </label>
+                        <label for="CALI-PCGC">
+                            <input type="checkbox" name="CALI-PCGC" value="Yes"> CALI - Peralta Creek Garden Club
+                            </input>
+                        </label>
+                    </div> 
+
+                    <!-- Multi-line Text Input Control -->
+                    <button type="submit" value="submit">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+        <footer>
+            <p>© 2025 SFSU ENGR 340 Team. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
+
