@@ -14,7 +14,7 @@ Example: self.insert('table_name', 'values')
 
 class Simplify():
     def __init__(self):
-        self.__connection = "sqlitecloud://ccd05tfthz.g1.sqlite.cloud:8860/Condensed_Data?apikey=Mji9QZnn0DLv8by9woBTc105GxkTltAVbcixpOF71Cg"
+        self.__connection = "sqlitecloud://ccd05tfthz.g1.sqlite.cloud:8860/Testing?apikey=Mji9QZnn0DLv8by9woBTc105GxkTltAVbcixpOF71Cg"
 
     def test_connection(self):
         return self.__connection
