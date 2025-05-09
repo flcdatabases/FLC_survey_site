@@ -161,7 +161,7 @@
                 <a href="{{ url_for('power_map_insight')}}">Power Map Insight</a>
             </header>            
             
-            <h1>Power Map</h1>
+            <h1>Power Map: Demographics</h1>
 
             <!--Connect to Charts.JS-->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
@@ -172,30 +172,30 @@
             <div style="display: flex; justify-content: center;">
                 <!--Demographics: Race-->
                 <div class="chart-container">
-                    <canvas id="race" style="width:100%;max-width:500px"></canvas>
+                    <canvas id="race" style="position: relative; height:35vh;max-width:35vw"></canvas>
                 </div>
                 <!--Demographics: School-->
                 <div class="chart-container">
-                    <canvas id="school" style="width:100%;max-width:500px"></canvas>
+                    <canvas id="school" style="position: relative; height:35vh;max-width:35vw"></canvas>
                 </div>
                 <!--Demographics: Grade-->
                 <div class="chart-container">
-                    <canvas id="grade" style="width:100%;max-width:500px"></canvas>
+                    <canvas id="grade" style="position: relative; height:35vh;max-width:35vw"></canvas>
                 </div>
             </div>
             <!--Row 2-->
             <div style="display: flex; justify-content: center;">
                 <!--Demographics: Organization Member?-->
                 <div class="chart-container">
-                    <canvas id="orgmember" style="width:100%;max-width:500px"></canvas>
+                    <canvas id="orgmember" style="position: relative; height:35vh;max-width:35vw"></canvas>
                 </div>
                 <!--Demographics: Organization-->
                 <div class="chart-container">
-                    <canvas id="org" style="width:100%;max-width:500px"></canvas>
+                    <canvas id="org" style="position: relative; height:35vh;max-width:35vw"></canvas>
                 </div>
                 <!--Demographics: Newsletter?-->
                 <div class="chart-container">
-                    <canvas id="news" style="width:100%;max-width:500px"></canvas>
+                    <canvas id="news" style="position: relative; height:35vh;max-width:35vw"></canvas>
                 </div>
             </div>
 
@@ -250,7 +250,8 @@
                             scales: {
                                 yAxes: [{
                                     ticks: {
-                                        beginAtZero: true
+                                        beginAtZero: true,
+                                        stepSize: 1
                                     }
                                 }]
                             }

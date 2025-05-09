@@ -156,7 +156,7 @@
                 <a href="{{ url_for('power_map_insight')}}">Power Map Insight</a>
             </header>
             
-            <h1>Power Map</h1>
+            <h1>Power Map: General</h1>
             
             <!--Connect to Charts.JS-->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
@@ -166,30 +166,30 @@
             <!--Row 1-->
             <div style="display: flex; justify-content: center;">
                 <div class="chart-container">
-                    <canvas id="age" style="width:100%;max-width:500px"></canvas>
+                    <canvas id="age" style="position: relative; height:35vh;max-width:35vw"></canvas>
                 </div>
                 <!--General Info: Recommend-->
                 <div class="chart-container">
-                    <canvas id="recommend" style="width:100%;max-width:500px"></canvas>
+                    <canvas id="recommend" style="position: relative; height:35vh;max-width:35vw"></canvas>
                 </div>
                 <!--General Info: Role-->
                 <div class="chart-container">
-                    <canvas id="role" style="width:100%;max-width:500px"></canvas>
+                    <canvas id="role" style="position: relative; height:35vh;max-width:35vw"></canvas>
                 </div>
             </div>
             <!--Row 2-->
             <div style="display: flex; justify-content: center;">
                 <!--General Info: Gender-->
                 <div class="chart-container">
-                    <canvas id="gender" style="width:100%;max-width:500px"></canvas>
+                    <canvas id="gender" style="position: relative; height:35vh;max-width:35vw"></canvas>
                 </div>
                 <!--General Info: Pronouns-->
                 <div class="chart-container">
-                    <canvas id="pronouns" style="width:100%;max-width:500px"></canvas>
+                    <canvas id="pronouns" style="position: relative; height:35vh;max-width:35vw"></canvas>
                 </div>
                 <!--General Info: Programs-->
                 <div class="chart-container">
-                    <canvas id="programs" style="width:100%;max-width:500px"></canvas>
+                    <canvas id="programs" style="position: relative; height:35vh;max-width:35vw"></canvas>
                 </div>
             </div>
 
@@ -241,7 +241,8 @@
                              scales: {
                                  yAxes: [{
                                      ticks: {
-                                         beginAtZero: true
+                                         beginAtZero: true,
+                                         stepSize: 1
                                      }
                                  }]
                              }

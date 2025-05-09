@@ -130,10 +130,11 @@ class Simplify():
             column_data=[]
             column_data_quantity=[]		
             for row in column:
-                if row[0] == '' or row[0] == None:
-                    column_data.append("N/A")
-                    column_data_quantity.append(row[-1])
-                else:
+                #if row[0] == '' or row[0] == None:
+                    #pass
+                    #column_data.append("N/A")
+                    #column_data_quantity.append(row[-1])
+                if row[0] != '' and row[0] != None:
                     column_data.append(row[0])
                     column_data_quantity.append(row[-1])
 

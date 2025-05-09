@@ -156,7 +156,7 @@
                 <a href="{{ url_for('power_map_insight')}}">Power Map Insight</a>
             </header>            
             
-            <h1>Power Map</h1>
+            <h1>Power Map: Community Insight</h1>
 
             <!--Connect to Charts.JS-->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
@@ -167,77 +167,77 @@
             <div style="display: flex; justify-content: center;">
                 <!--Community Insight: Community Environmental Justice-->
                 <div class="chart-container">
-                    <canvas id="just" style="width:100%;max-width:300px"></canvas>
+                    <canvas id="just" style="position: relative; height:20vh;max-width:20vw"></canvas>
                 </div>
                 <!--Community Insight: Seen Environmental Justice-->
                 <div class="chart-container">
-                    <canvas id="seen" style="width:100%;max-width:300px"></canvas>
+                    <canvas id="seen" style="position: relative; height:20vh;max-width:20vw"></canvas>
                 </div>
                 <!--Community Insight: Air Quality Issues-->
                 <div class="chart-container">
-                    <canvas id="air" style="width:100%;max-width:300px"></canvas>
+                    <canvas id="air" style="position: relative; height:20vh;max-width:20vw"></canvas>
                 </div>
-                
+                <!--Community Insight: Improve Air Quality-->
+                <div class="chart-container">
+                    <canvas id="impAir" style="position: relative; height:20vh;max-width:20vw"></canvas>
+                </div>
             </div>
             <!--Row 2-->
             <div style="display: flex; justify-content: center;">
-                <!--Community Insight: Improve Air Quality-->
-                <div class="chart-container">
-                    <canvas id="impAir" style="width:100%;max-width:300px"></canvas>
-                </div>
                 <!--Community Insight: Water Quality Issues-->
                 <div class="chart-container">
-                    <canvas id="water" style="width:100%;max-width:300px"></canvas>
+                    <canvas id="water" style="position: relative; height:20vh;max-width:20vw"></canvas>
                 </div>
                 <!--Community Insight: Improve Water Quality-->
                 <div class="chart-container">
-                    <canvas id="impWater" style="width:100%;max-width:300px"></canvas>
+                    <canvas id="impWater" style="position: relative; height:20vh;max-width:20vw"></canvas>
+                </div>
+                <!--Community Insight: Green Spaces-->
+                <div class="chart-container">
+                    <canvas id="green" style="position: relative; height:20vh;max-width:20vw"></canvas>
+                </div>
+                <!--Community Insight: Invest Green Spaces-->
+                <div class="chart-container">
+                    <canvas id="invGreen" style="position: relative; height:20vh;max-width:20vw"></canvas>
                 </div>
             </div>
             <!--Row 3-->
             <div style="display: flex; justify-content: center;">
-                <!--Community Insight: Green Spaces-->
-                <div class="chart-container">
-                    <canvas id="green" style="width:100%;max-width:300px"></canvas>
-                </div>
-                <!--Community Insight: Invest Green Spaces-->
-                <div class="chart-container">
-                    <canvas id="invGreen" style="width:100%;max-width:300px"></canvas>
-                </div>
                 <!--Community Insight: Use Green Spaces-->
                 <div class="chart-container">
-                    <canvas id="useGreen" style="width:100%;max-width:300px"></canvas>
+                    <canvas id="useGreen" style="position: relative; height:20vh;max-width:20vw"></canvas>
+                </div>
+                <!--Community Insight: More Community Space-->
+                <div class="chart-container">
+                    <canvas id="space" style="position: relative; height:20vh;max-width:20vw"></canvas>
+                </div>
+                <!--Community Insight: Increase School Fundings-->
+                <div class="chart-container">
+                    <canvas id="fund" style="position: relative; height:20vh;max-width:20vw"></canvas>
+                </div>
+                <!--Community Insight: Affordable Utilities-->
+                <div class="chart-container">
+                    <canvas id="util" style="position: relative; height:20vh;max-width:20vw"></canvas>
                 </div>
             </div>
             <!--Row 4-->
             <div style="display: flex; justify-content: center;">
-                <!--Community Insight: More Community Space-->
+                <!--Community Insight: Better Infrastructure-->
                 <div class="chart-container">
-                    <canvas id="space" style="width:100%;max-width:300px"></canvas>
+                    <canvas id="infra" style="position: relative; height:20vh;max-width:20vw"></canvas>
                 </div>
-                <!--Community Insight: Increase School Fundings-->
+                <!--Community Insight: Better Transport-->
                 <div class="chart-container">
-                    <canvas id="fund" style="width:100%;max-width:300px"></canvas>
+                    <canvas id="transport" style="position: relative; height:20vh;max-width:20vw"></canvas>
                 </div>
-                <!--Community Insight: Affordable Utilities-->
+                <!--Community Insight: Participation Interest-->
                 <div class="chart-container">
-                    <canvas id="util" style="width:100%;max-width:300px"></canvas>
+                    <canvas id="interest" style="position: relative; height:20vh;max-width:20vw"></canvas>
                 </div>
             </div>
             <!--Row 5-->
             <div style="display: flex; justify-content: center;">
-                <!--Community Insight: Better Infrastructure-->
-                <div class="chart-container">
-                    <canvas id="infra" style="width:100%;max-width:300px"></canvas>
-                </div>
-                <!--Community Insight: Better Transport-->
-                <div class="chart-container">
-                    <canvas id="transport" style="width:100%;max-width:300px"></canvas>
-                </div>
-                <!--Community Insight: Participation Interest-->
-                <div class="chart-container">
-                    <canvas id="interest" style="width:100%;max-width:300px"></canvas>
-                </div>
+            
             </div>
 
             
@@ -292,7 +292,7 @@
                 //Make charts
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                    const barColors = ["red", "orange","green","blue", "purple", "pink", "brown", "grey"];
+                    const barColors = ["red", "green"];
 
                     // Arguments: The chart id (string), x axis variables (list), y axis variables (list), label (string)
                     function makeBarChart(id_string, x_vars, y_vars, label){
@@ -310,7 +310,8 @@
                             scales: {
                                 yAxes: [{
                                     ticks: {
-                                        beginAtZero: true
+                                        beginAtZero: true,
+                                        stepSize: 1
                                     }
                                 }]
                             }
