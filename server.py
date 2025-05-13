@@ -173,7 +173,7 @@ def survey_general():
 
 @app.route('/power_maps', methods = ['POST', 'GET'],)
 def power_maps(): 
-	return render_template("power_map_preview.html")
+	return redirect(url_for('power_map_general'))
 
 # Plotting for general information and participation survey
 @app.route("/power_map_general", methods = ['POST', 'GET'],)
